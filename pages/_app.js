@@ -2,7 +2,6 @@ import "../styles/index.css"
 import App from "next/app"
 import Head from "next/head"
 import Layout from "../components/Layout"
-import { getCategories } from "../utils/api"
 import { ThemeProvider } from 'next-themes'
 import { PageTransition } from 'next-page-transitions';
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -13,7 +12,7 @@ const MyApp = ({Component, pageProps}) => {
         <>
             <ThemeProvider themes={['dark', 'light']} defaultTheme={'dark'}>
                 <ParallaxProvider>
-                    <Layout categories={pageProps.categories}>
+                    <Layout>
                         <Head>
                             <link rel="preconnect" href="https://fonts.googleapis.com"/>
                             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
@@ -40,10 +39,8 @@ MyApp.getInitialProps = async (ctx) => {
     // Calls page's `getInitialProps` and fills `appProps.pageProps`
     const appProps = await App.getInitialProps(ctx)
 
-    // Fetch global site settings from Strapi
-    const categories = await getCategories()
     // Pass the data to our page via props
-    return {...appProps, pageProps: {categories, path: ctx?.router?.route}}
+    return {...appProps, pageProps: {path: ctx?.router?.route}}
 }
 
 export default MyApp
