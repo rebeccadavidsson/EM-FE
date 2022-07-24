@@ -24,7 +24,7 @@ const HomePage = ({products}) => {
         <div>
             {/* Desktop */}
             <div className={'flex flex-wrap justify-between items-center mx-auto hidden md:block '}>
-                <div className={'p-4 xl:pt-16 flex items-center'}>
+                <div className={'p-4 xl:pt-16  md:pb-8 flex items-center'}>
                     <div className={'w-12 h-12'}>
                         <NextImage
                             media={logoMedia}/>
@@ -35,7 +35,7 @@ const HomePage = ({products}) => {
 
             {/* Mobile */}
             <div className={'flex flex-wrap justify-between items-center mx-auto md:hidden block'}>
-                <div className={'p-4 xl:pt-16 flex items-center '}>
+                <div className={'p-4 xl:pt-16  md:pb-8 flex items-center '}>
                     <h1 className={'md:pl-8 font-roboto-mono text-3xl'}>Emely Davidsson</h1>
                     <div className={'w-12 h-12'}>
                         <NextImage

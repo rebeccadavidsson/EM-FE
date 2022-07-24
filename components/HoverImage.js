@@ -9,11 +9,13 @@ const cont = {
 };
 
 const SelectedImage = ({
+                            index,
                            photo,
                            margin,
                            direction,
                            top,
-                           left
+                           left,
+                            onClick
                        }) => {
     const [showDetails, setShowDetails] = useState(false);
 
@@ -34,6 +36,7 @@ const SelectedImage = ({
 
     return (
         <div
+            onClick={() => onClick(photo, index)}
             style={{margin, height: photo.height, width: photo.width, ...cont}}
             onMouseEnter={MouseOver}
             onMouseLeave={MouseOut}
