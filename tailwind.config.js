@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'lato': ['Lato']
+        'roboto-mono': ['Roboto Mono']
       },
       screens: {
         'xs': '340px',

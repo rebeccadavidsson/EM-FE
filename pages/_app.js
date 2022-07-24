@@ -16,8 +16,8 @@ const MyApp = ({Component, pageProps}) => {
                     <Layout categories={pageProps.categories}>
                         <Head>
                             <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-                            <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
+                            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+                            <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet" />
 
                         </Head>
 

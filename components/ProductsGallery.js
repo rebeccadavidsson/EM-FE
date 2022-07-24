@@ -1,11 +1,8 @@
-import CategoryButtons from "./CategoryButtons"
+
 import useWindowDimensions from "../utils/useWindowDimensions";
 import { useRouter } from 'next/router'
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
-import { useEffect } from "react";
 import { NextImage } from '../components/Image'
-import { Fade } from "react-reveal";
 import Gallery from "react-photo-gallery-next";
 
 const ProductsGallery = ({products}) => {
@@ -27,10 +24,9 @@ const ProductsGallery = ({products}) => {
 
     return (
         <>
-            <CategoryButtons/>
-            <div className="container mt-8 " id="products-gallery">
+            <div className="mt-8 " id="products-gallery">
 
-                <Gallery photos={newProducts} direction={"column"} onClick={goToSlug} margin={6}
+                <Gallery photos={newProducts} direction={"row"} onClick={goToSlug} margin={6}
                          columns={width > 768 ? 3 : 2}/>
             </div>
         </>
