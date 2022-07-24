@@ -12,3 +12,29 @@ h1, h2, h3 {
     font-family: Roboto Mono;
     text-transform: uppercase;
 }
+
+
+
+.selected:hover .hover-image-overlay {
+    opacity: 1;
+}
+
+.hover-image.selected > img {
+    filter: brightness(0.35);
+    transition: 0.4s ease;
+}
+.hover-image {
+    transition: 0.4s ease;
+}
+
+.hover-image-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
