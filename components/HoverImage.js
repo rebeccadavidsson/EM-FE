@@ -48,7 +48,7 @@ const SelectedImage = ({
                 {...photo}
             />
             {showDetails &&
-                <div className={'hover-image-overlay m-4 md:m-8 text-white'}>
+                <div className={'hover-image-overlay m-4 md:p-4 text-white'}>
                     <div className={'inner-overlay max-w-fit'}>
                         <h3 className={'text-sm md:text-xl font-bold pb-4'}>{photo.title}</h3>
                         <hr/>
