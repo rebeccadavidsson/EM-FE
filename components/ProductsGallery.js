@@ -52,7 +52,7 @@ const ProductsGallery = ({products}) => {
 
     return (
         <>
-            <div className="mt-8 " id="products-gallery">
+            <div className="md:p-20 pt-8 container" id="products-gallery">
                 <Gallery
                     renderImage={imageRenderer}
                     photos={newProducts} direction={"row"} margin={6}
