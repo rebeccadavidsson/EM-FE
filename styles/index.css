@@ -13,6 +13,10 @@ h1, h2, h3 {
     text-transform: uppercase;
 }
 
+h2 {
+    font-size: larger;
+}
+
 .selected:hover .hover-image-overlay {
     opacity: 1;
 }
@@ -47,5 +51,10 @@ h1, h2, h3 {
 }
 
 .react-images__view-image--isModal {
+    margin: 0 auto;
+}
+
+.productsWrapper {
+    max-width: 900px;
     margin: 0 auto;
 }

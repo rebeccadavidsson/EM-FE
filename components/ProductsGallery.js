@@ -6,7 +6,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import { useCallback, useState } from "react";
 import SelectedImage from "./HoverImage";
 
-const ProductsGallery = ({products}) => {
+const ProductsGallery = ({products, categoryName}) => {
 
     const {width} = useWindowDimensions();
     const newProducts = [];
@@ -34,6 +34,7 @@ const ProductsGallery = ({products}) => {
         newProducts.push(newProd)
     });
 
+    const sortedProducts = products.sort((a, b) => b.weight - a.weight);
 
     const imageRenderer = useCallback(
         ({ index, left, top, key, photo }) => (
@@ -53,9 +54,10 @@ const ProductsGallery = ({products}) => {
     return (
         <>
             <div className="md:p-20 pt-8 container" id="products-gallery">
+                {categoryName && <h2 class={"pb-8"}>{categoryName}</h2>}
                 <Gallery
                     renderImage={imageRenderer}
-                    photos={newProducts} direction={"row"} margin={6}
+                    photos={sortedProducts} direction={"row"} margin={6}
                          columns={width > 768 ? 3 : 2}/>
 
                 <ModalGateway>
@@ -63,7 +65,7 @@ const ProductsGallery = ({products}) => {
                         <Modal onClose={closeLightbox}>
                             <Carousel
                                 currentIndex={currentImage}
-                                views={newProducts.map(x => ({
+                                views={sortedProducts.map(x => ({
                                     ...x,
                                     srcset: x.srcSet,
                                     caption: x.title

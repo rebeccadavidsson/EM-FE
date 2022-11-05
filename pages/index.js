@@ -14,13 +14,32 @@ import Header from "../components/Header";
 
 const HomePage = ({products}) => {
 
+    const groupBy = (items, key) => items.reduce(
+        (result, item) => {
+            return ({
+                ...result,
+                [item[key]?.weight]: [
+                    ...(result[item[key]?.weight] || []),
+                    item,
+                ],
+            });
+        },
+        {},
+    );
+
+    const groupedProducts = groupBy(products, "category");
+
     return (
 
         <div className={'fade-in'}>
-            <Header />
 
-            <ProductsGallery products={products}/>
-
+            <div className={"productsWrapper"}>
+                <Header/>
+                {Object.keys(groupedProducts).length &&
+                    Object.keys(groupedProducts).map((value) => <ProductsGallery
+                        categoryName={groupedProducts[value][0]?.category?.name} products={groupedProducts[value]}/>)
+                }
+            </div>
         </div>
 
     )
