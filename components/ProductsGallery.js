@@ -54,7 +54,7 @@ const ProductsGallery = ({products, categoryName}) => {
     return (
         <>
             <div className="md:p-20 pt-8 container" id="products-gallery">
-                {categoryName && <h2 class={"pb-8"}>{categoryName}</h2>}
+                {categoryName && <h2 className={"pb-8"}>{categoryName}</h2>}
                 <Gallery
                     renderImage={imageRenderer}
                     photos={sortedProducts} direction={"row"} margin={6}

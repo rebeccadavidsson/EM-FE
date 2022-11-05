@@ -28,6 +28,7 @@ const HomePage = ({products}) => {
     );
 
     const groupedProducts = groupBy(products, "category");
+    const sortedList = Object.keys(groupedProducts).sort((obj1, obj2) => obj2 - obj1)
 
     return (
 
@@ -35,8 +36,8 @@ const HomePage = ({products}) => {
 
             <div className={"productsWrapper"}>
                 <Header/>
-                {Object.keys(groupedProducts).length &&
-                    Object.keys(groupedProducts).map((value) => <ProductsGallery
+                {sortedList.length &&
+                    sortedList.map((value) => <ProductsGallery
                         categoryName={groupedProducts[value][0]?.category?.name} products={groupedProducts[value]}/>)
                 }
             </div>
